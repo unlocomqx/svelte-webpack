@@ -1,5 +1,5 @@
 const TestComponent = require('./Card.svelte');
 
-const Test = new PageComponent.default({
+const Test = new TestComponent.default({
   target: document.querySelector('#mainContent'),
 });

@@ -27,6 +27,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js)$/,
+        exclude: /(node_modules(?!\/svelte))/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
         test: /\.svelte$/,
         exclude: /node_modules/,
         use: [

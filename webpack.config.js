@@ -23,14 +23,19 @@ module.exports = {
   mode: process.env.NODE_ENV,
   target: 'web',
   resolve: {
+    extensions: ['.mjs', '.js', '.svelte']
   },
   module: {
     rules: [
       {
-        test: /\.(js)$/,
-        exclude: /(node_modules(?!\/svelte))/,
+        test: /\.(js|mjs|svelte)$/,
+        exclude: /node_modules\/(?!svelte)/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-object-rest-spread']
+          }
         },
       },
       {

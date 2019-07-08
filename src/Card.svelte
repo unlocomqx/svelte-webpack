@@ -5,12 +5,19 @@
     <slot>
       <p>This is an empty card waiting for some content.</p>
     </slot>
+    <p>
+      {JSON.stringify(obj)}
+      {JSON.stringify(obj2)}
+    </p>
   </div>
 </div>
 
 <script>
   export let title = '';
   export let detail = '';
+
+  const obj = {a: 1, b: 2};
+  const obj2 = {... obj, c: 3};
 </script>
 
 <style type="text/less">
